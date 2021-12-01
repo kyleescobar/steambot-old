@@ -15,6 +15,7 @@ object Updater {
 
         update("steambot.jar")
         update("steambot.dll")
+        update("PolyHook_2.dll")
 
         Logger.info("SteamBot is up-to-date.")
     }

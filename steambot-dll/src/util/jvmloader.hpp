@@ -4,7 +4,7 @@
 
 #include <jni.h>
 #include <string>
-#include <windows.h>
+#include <Windows.h>
 #include "jnipp.h"
 
 namespace jvmloader {
@@ -15,7 +15,7 @@ namespace jvmloader {
         jni::Vm createJavaVM(jvmDllPath.c_str(), classPath.c_str());
 
         jni::Class cls = jni::Class("dev/steambot/SteamBot");
-        jni::method_t method = cls.getStaticMethod("start", "()V");
+        jni::method_t method = cls.getStaticMethod("init", "()V");
         cls.call<void>(method);
     }
 }

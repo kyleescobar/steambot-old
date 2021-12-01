@@ -27,6 +27,8 @@ object Launcher {
         this.downloadAdoptJDK()
         Updater.run()
         this.startSteamClient()
+
+        Injector.injectDLL(STEAMBOT_DIR.resolve("bin/PolyHook_2.dll"), this.processId)
         Injector.injectDLL(STEAMBOT_DIR.resolve("bin/steambot.dll"), this.processId)
 
         Logger.info("SteamBot client launcher has completed successfully. Exiting launcher process.")

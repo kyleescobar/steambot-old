@@ -2,7 +2,7 @@
 # define WIN32_LEAN_AND_MEAN 1
 
 // Windows Dependencies
-# include <windows.h>
+# include <Windows.h>
 #else
 // UNIX Dependencies
 # include <dlfcn.h>

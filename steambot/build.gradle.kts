@@ -4,6 +4,8 @@ dependencies {
     implementation("net.java.dev.jna:jna:_")
     implementation("net.java.dev.jna:jna-platform:_")
     implementation("io.insert-koin:koin-core:_")
+    implementation("org.jire.arrowhead:arrowhead:_")
+    implementation("it.unimi.dsi:fastutil:_")
 }
 
 tasks {

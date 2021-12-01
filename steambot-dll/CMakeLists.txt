@@ -23,10 +23,10 @@ file(GLOB_RECURSE SOURCES ${CMAKE_BUILD_DIR} "src/*.cpp" "src/*.h" "src/*.hpp")
 
 find_package(JNI REQUIRED)
 
-include_directories(${JNI_INCLUDE_DIRS})
-link_directories(${JNI_LIBRARIES})
+include_directories(include/ ${JNI_INCLUDE_DIRS})
+link_directories(lib/ ${JNI_LIBRARIES})
 
 add_library(steambot SHARED ${SOURCES})
 
-target_include_directories(steambot PRIVATE ${JNI_INCLUDE_DIRS})
-target_link_libraries(steambot PRIVATE ${JNI_LIBRARIES})
+target_include_directories(steambot PRIVATE include/ ${JNI_INCLUDE_DIRS})
+target_link_libraries(steambot PRIVATE PolyHook_2 ${JNI_LIBRARIES})

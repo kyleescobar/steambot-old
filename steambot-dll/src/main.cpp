@@ -2,7 +2,8 @@
 #include <iostream>
 #include <ShlObj.h>
 #include <string>
-#include "jvmloader.hpp"
+#include "util/jvmloader.hpp"
+#include "bot/steambot.h"
 
 void __stdcall init() {
     AllocConsole();
@@ -16,11 +17,9 @@ void __stdcall init() {
     SHGetFolderPath(nullptr, CSIDL_PROFILE, nullptr, 0, path);
 
     std::string classpath = std::string(path) + std::string(R"(\.steambot\)");
-    std::cout << "Detected SteamBot Directory: " << classpath << std::endl;
-
     jvmloader::createJVM(classpath);
 
-    std::cout << "Successfully started SteamBot JVM." << std::endl;
+    steambot::init();
 }
 
 BOOL __stdcall DllMain(HMODULE hModule, DWORD dwReason, LPVOID lpReserved) {
