@@ -1,0 +1,6 @@
+.gradle/
+.idea/
+build/
+out/
+launcher/src/main/resources/steambot.dll
+laucher/src/main/resources/steambot.jar
