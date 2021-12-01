@@ -6,7 +6,6 @@
 #include "polyhook2/Detour/x64Detour.hpp"
 #include "polyhook2/Exceptions/BreakPointHook.hpp"
 #include "../common.h"
-#include "hooks/hooks.h"
 
 namespace steambot {
     namespace module {
@@ -14,8 +13,12 @@ namespace steambot {
         void load();
     }
 
+    namespace globals {
+        void load();
+    }
+
     namespace functions {
-        typedef void* (*doCycle_t)();
+        typedef void (*worldToScreen_t)(void*, void*, int, int, int);
         void load();
     }
 

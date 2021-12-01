@@ -34,6 +34,7 @@ class SteamBot {
         attachProcess(this.processId)
         overlayManager.init()
         this.startThreads()
+        Test.run()
     }
 
     fun stop() {
@@ -61,13 +62,15 @@ class SteamBot {
 
     companion object {
 
+        private val DI_MODULES = listOf(
+            STEAMBOT_MODULE
+        )
+
         @JvmStatic
         fun init() {
             System.setProperty("sun.java2d.noddraw", "true")
 
-            startKoin { modules(listOf(
-                STEAMBOT_MODULE
-            )) }
+            startKoin { modules(DI_MODULES) }
 
             val steamBot = get<SteamBot>()
             steamBot.processId = getParentProcessID()

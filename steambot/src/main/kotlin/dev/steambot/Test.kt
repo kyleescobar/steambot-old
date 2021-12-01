@@ -1,5 +1,6 @@
 package dev.steambot
 
+import dev.steambot.api.API
 import dev.steambot.api.Client
 import dev.steambot.util.every
 import dev.steambot.util.inject

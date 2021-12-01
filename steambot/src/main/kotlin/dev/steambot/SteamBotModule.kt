@@ -9,7 +9,5 @@ import org.koin.dsl.module
 val STEAMBOT_MODULE = module {
     single { SteamBot() }
     single { OverlayManager() }
-
-
     single { RSClient() } bind(Client::class)
 }

@@ -8,6 +8,7 @@ dependencies {
     implementation("it.unimi.dsi:fastutil:_")
     implementation("io.reactivex.rxjava3:rxjava:_")
     implementation("io.reactivex.rxjava3:rxkotlin:_")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:_")
 }
 
 tasks {

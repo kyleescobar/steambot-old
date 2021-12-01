@@ -8,5 +8,8 @@ interface Client {
 
     var loginState: Int
 
+    val localPlayer: Player
+
     val onCycle: PublishSubject<Client>
+
 }

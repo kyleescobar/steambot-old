@@ -6,9 +6,11 @@ import com.sun.jna.platform.win32.WinDef
 import com.sun.jna.platform.win32.WinUser
 import com.sun.jna.ptr.IntByReference
 import dev.steambot.SteamBot
+import dev.steambot.api.API
 import dev.steambot.rs.RSClient
 import dev.steambot.util.every
 import dev.steambot.util.inject
+import dev.steambot.util.nullableProperty
 import org.tinylog.kotlin.Logger
 import java.awt.*
 import java.lang.reflect.Method
@@ -84,10 +86,13 @@ class OverlayFrame : JDialog() {
             val g2d = g.create() as Graphics2D
             g2d.color = Color(0, 0, 0, 0)
             g2d.fillRect(0, 0, width, height)
-            g2d.color = Color.WHITE
-
             g2d.color = Color.RED
-            g2d.fillRect(200, 200, 300, 300)
+            g2d.font = Font(Font.DIALOG, Font.BOLD, 12)
+
+            val pos = API.client.localPlayer
+            val screenPos = API.viewport.worldToScreen(pos.x, pos.y, 0)
+
+            Logger.info("[x: ${pos.x}, y: ${pos.y}]")
 
             g2d.dispose()
         }
