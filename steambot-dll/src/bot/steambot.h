@@ -4,6 +4,7 @@
 
 #include "polyhook2/CapstoneDisassembler.hpp"
 #include "polyhook2/Detour/x64Detour.hpp"
+#include "polyhook2/Exceptions/BreakPointHook.hpp"
 #include "../common.h"
 #include "hooks/hooks.h"
 
@@ -14,8 +15,7 @@ namespace steambot {
     }
 
     namespace functions {
-        typedef void* (*doCycle_t)(void*, uint32_t, uint32_t, uint32_t, long, uint32_t);
-        typedef void (*doCycleLoggedOut_t)(int*, uintptr_t, uintptr_t, uintptr_t, uintptr_t);
+        typedef void* (*doCycle_t)();
         void load();
     }
 

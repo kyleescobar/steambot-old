@@ -6,6 +6,8 @@ dependencies {
     implementation("io.insert-koin:koin-core:_")
     implementation("org.jire.arrowhead:arrowhead:_")
     implementation("it.unimi.dsi:fastutil:_")
+    implementation("io.reactivex.rxjava3:rxjava:_")
+    implementation("io.reactivex.rxjava3:rxkotlin:_")
 }
 
 tasks {
